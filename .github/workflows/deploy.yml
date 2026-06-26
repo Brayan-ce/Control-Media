@@ -30,6 +30,8 @@ jobs:
             chmod +x deploy/docker/start.sh
 
             echo ">>> Building frontend assets..."
+            cd /var/www/mediacms/frontend
+            rm -rf node_modules packages/*/node_modules
             docker run --rm \
               -v /var/www/mediacms/frontend:/home/mediacms.io/mediacms/frontend \
               -w /home/mediacms.io/mediacms/frontend \
