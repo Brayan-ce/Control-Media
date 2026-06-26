@@ -41,7 +41,7 @@ export function SidebarNavigationMenu() {
       items.push({
         link: links.home,
         icon: 'home',
-        text: translateString('Home'),
+        text: translateString('Home Prueba'),
         className: 'nav-item-home',
       });
     }
