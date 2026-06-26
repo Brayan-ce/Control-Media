@@ -23,6 +23,11 @@ jobs:
             cd /var/www/mediacms
             git pull
 
+            echo ">>> Fixing permissions..."
+            chmod +x deploy/docker/entrypoint.sh
+            chmod +x deploy/docker/prestart.sh
+            chmod +x deploy/docker/start.sh
+
             echo ">>> Building frontend assets..."
             docker run --rm \
               -v /var/www/mediacms/frontend:/home/mediacms.io/mediacms/frontend \
