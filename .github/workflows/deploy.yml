@@ -39,9 +39,10 @@ jobs:
               bash -c "npm install && npm run dist"
 
             echo ">>> Copying static files..."
-            cp -r frontend/dist/static/* static/ || echo "No static files to copy"
+            cp -r dist/static/* /var/www/mediacms/static/ || echo "No static files to copy"
 
             echo ">>> Restarting services..."
+            cd /var/www/mediacms
             docker compose up -d --force-recreate --remove-orphans
 
             echo ">>> Pruning old Docker images..."
